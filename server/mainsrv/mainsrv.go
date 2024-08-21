@@ -16,7 +16,7 @@ type server struct {
 }
 
 func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (rsp *pb.HelloReply, err error) {
-	rsp = &pb.HelloReply{Message: "Hello World!" + req.GetName()}
+	rsp = &pb.HelloReply{Message: "Hello World" + req.GetName()}
 	return
 }
 
