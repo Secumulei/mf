@@ -12,11 +12,15 @@ import (
 )
 
 type server struct {
-	pb.UnimplementedGreeterServer
+	pb.UnsafeGreeterServer
 }
 
 func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (rsp *pb.HelloReply, err error) {
 	rsp = &pb.HelloReply{Message: "Hello World" + req.GetName()}
+	return
+}
+
+func (s *server) GetIp(ctx context.Context, req *pb.GetIpRequest) (rsp *pb.GetIpReply, err error) {
 	return
 }
 
